@@ -1,8 +1,8 @@
-# 🛣️ Road Damage Detection – YOLOv8
+#  Road Damage Detection – YOLOv8
 
 Détection automatique des dégradations routières (fissures, nids-de-poule, etc.) à partir d'images, en utilisant **YOLOv8** (Ultralytics) entraîné sur le dataset **RDD2022** (Road Damage Dataset).
 
-## 📋 Description
+##  Description
 
 Ce projet entraîne un modèle de détection d'objets **YOLOv8** capable d'identifier et de localiser 5 types de dégradations routières sur des images :
 
@@ -14,7 +14,7 @@ Ce projet entraîne un modèle de détection d'objets **YOLOv8** capable d'ident
 | 3 | Other corruption (autre dégradation) |
 | 4 | Pothole (nid-de-poule) |
 
-## 📂 Dataset
+##  Dataset
 
 Le projet utilise le dataset **RDD2022** (Road Damage Dataset), organisé au format YOLO :
 
@@ -33,15 +33,15 @@ RDD_SPLIT/
 
 Chaque image possède un fichier `.txt` associé contenant les annotations au format YOLO (`classe x_centre y_centre largeur hauteur`, normalisées entre 0 et 1).
 
-> ⚠️ Le dataset n'est pas inclus dans ce dépôt en raison de sa taille. Vous pouvez le télécharger via [Kaggle - RDD2022](https://www.kaggle.com/datasets/aliabdelmenam/rdd-2022) ou toute autre source équivalente.
+>  Le dataset n'est pas inclus dans ce dépôt en raison de sa taille. Vous pouvez le télécharger via [Kaggle - RDD2022](https://www.kaggle.com/datasets/aliabdelmenam/rdd-2022) ou toute autre source équivalente.
 
-## ⚙️ Prérequis
+##  Prérequis
 
 - Python 3.8+
 - GPU recommandé (CUDA) pour l'entraînement
 - Jupyter Notebook / JupyterLab ou Kaggle Notebooks
 
-## 📦 Installation
+##  Installation
 
 ```bash
 git clone https://github.com/<votre-utilisateur>/<nom-du-repo>.git
@@ -58,7 +58,7 @@ matplotlib
 pillow
 ```
 
-## 🚀 Utilisation
+##  Utilisation
 
 ### 1. Configurer le dataset
 
@@ -97,11 +97,11 @@ results = model.train(
 ### 3. Évaluer et visualiser les résultats
 
 Le notebook affiche automatiquement :
-- 📊 Courbes de résultats (loss, mAP, precision, recall)
-- 🔲 Matrice de confusion (brute et normalisée)
-- 📈 Courbes Precision / Recall / F1
-- 🏷️ Distribution des labels
-- ✅ Comparaison labels réels vs prédictions sur les batchs de validation
+-  Courbes de résultats (loss, mAP, precision, recall)
+-  Matrice de confusion (brute et normalisée)
+-  Courbes Precision / Recall / F1
+-  Distribution des labels
+-  Comparaison labels réels vs prédictions sur les batchs de validation
 
 ### 4. Faire une prédiction
 
@@ -112,7 +112,7 @@ model = YOLO("runs/road_damage_full/weights/best.pt")
 results = model.predict(source="chemin/vers/image.jpg", conf=0.25, save=True)
 ```
 
-## 📁 Structure du projet
+##  Structure du projet
 
 ```
 .
@@ -122,17 +122,14 @@ results = model.predict(source="chemin/vers/image.jpg", conf=0.25, save=True)
 └── README.md
 ```
 
-## 📊 Résultats
+##  Résultats
 
 Après entraînement, les résultats (poids du modèle, graphiques, matrices de confusion) sont enregistrés dans `runs/road_damage_full/`.
 
-## 🛠️ Technologies utilisées
+##  Technologies utilisées
 
 - [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics)
 - PyTorch
 - Matplotlib / PIL
 - Jupyter Notebook
 
-## ✍️ Auteur
-
-Projet réalisé dans le cadre d'un projet de détection de dégradations routières par vision par ordinateur.
